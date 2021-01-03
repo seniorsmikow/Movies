@@ -1,13 +1,16 @@
 import React from 'react';
+import MoviesHoc from './MoviesHoc';
 
 
 const Movies = props => {
+
+    console.log(props.data);
+
     return (
         <div>
             Movies page
-            {this.props.data}
         </div>
     )
 };
 
-export default Movies;
+export default MoviesHoc(Movies);
