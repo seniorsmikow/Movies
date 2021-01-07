@@ -3,6 +3,6 @@ import { compose } from 'recompose';
 import { graphql } from 'react-apollo';
 import { moviesQuery } from './MoviesQuery';
  
-import styles from './Movies.module.scss';
+import { styles } from './styles';
 
 export default compose(withStyles(styles), graphql(moviesQuery));

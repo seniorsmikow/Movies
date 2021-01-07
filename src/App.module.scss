@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+
+.app__wrapper {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  width: 100%;
+  min-height: 100%;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  background-color: red;
+}

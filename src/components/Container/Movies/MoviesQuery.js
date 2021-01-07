@@ -7,6 +7,7 @@ export const moviesQuery = gql`
             name
             genre
             year
+            imgUrl
         }
     }
 `;
