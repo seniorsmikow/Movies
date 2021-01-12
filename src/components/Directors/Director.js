@@ -1,8 +1,9 @@
 import React from 'react';
-import DirectorsHoc from './DirectorsHoc';
 import DirectorCard from './DirectorCard';
 import DirectorPoster from './DirectorPoster';
 import DirectorForm from '../DirectorForm/DirectorForm';
+
+import withHocs from './DirectorsHoc';
 
 
 class Directors extends React.Component {
@@ -14,6 +15,8 @@ class Directors extends React.Component {
     }
 
     handleChange = name => ({ target }) => { this.setState({ [name]: target.value }); };
+
+    clearForm = () => (this.setState({name: '', age: 0, imgUrl: ''}));
     
     render() {
 
@@ -31,10 +34,10 @@ class Directors extends React.Component {
                     </div>
                 </div>)
                 }
-                <DirectorForm handleChange={this.handleChange} selectedValue={{ name, age, id, imgUrl }} />
+                <DirectorForm handleChange={this.handleChange} selectedValue={{ name, age, id, imgUrl }} clearForm={this.clearForm}/>
             </div>   
         )
     }
 };
 
-export default DirectorsHoc(Directors);
+export default withHocs(Directors);

@@ -7,38 +7,51 @@ import withHoc from './DirectorFormHoc';
 
 class DirectorForm extends React.Component {
 
-    handleSave() {
-        const { selectedValue, addDirector } = this.props;
+    handleSave = () => {
+        const { selectedValue, addDirector, clearForm } = this.props;
         const { id, name, age, imgUrl } = selectedValue;
+        addDirector({name, age: Number(age), imgUrl});
+        clearForm();
     }
+
 
     render() {
 
-        const { classes, selectedValue = {} } = this.props;
+        const { classes, handleChange,  selectedValue = {} } = this.props;
         const { name, age, imgUrl } = selectedValue;
 
         return (
             <form className={classes.root} noValidate autoComplete="off">
-                <TextField 
-                    id="standard-basic" 
-                    label="Имя режиссёра" 
+                <TextField
+                    id="outlined-name"
+                    label="Name"
+                    className={classes.textField}
                     value={name}
+                    onChange={handleChange('name')}
+                    margin="normal"
                     variant="outlined"
                 />
-                <TextField 
-                    id="standard-basic" 
-                    label="Возраст" 
+                <TextField
+                    id="outlined-rate"
+                    label="Age"
+                    className={classes.textField}
                     value={age}
+                    onChange={handleChange('age')}
+                    type="number"
+                    margin="normal"
                     variant="outlined"
                 />
-                <TextField 
-                    id="standard-basic" 
-                    label="Ссылка на изображение" 
+                <TextField
+                    id="outlined-rate"
+                    label="Photo"
+                    className={classes.textField}
                     value={imgUrl}
+                    onChange={handleChange('imgUrl')}
+                    margin="normal"
                     variant="outlined"
                 />
                 <Button variant="contained" color="primary" onClick={this.handleSave}>
-                Сохранить
+                    Сохранить
                 </Button>
             </form>
         );

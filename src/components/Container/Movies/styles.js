@@ -6,4 +6,9 @@ export const styles = theme => ({
       alignItems: 'center',
       marginTop: '100px',
     },
+    movies__wrapper: {
+      display: 'flex',
+      flexDirection: 'column'
+    }
+
 });

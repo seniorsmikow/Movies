@@ -24,12 +24,12 @@ export default function MoviePoster(props) {
     const classes = useStyles();
 
     return (
-    <Card className={classes.root}>
-        <CardMedia
-            className={classes.media}
-            image={props.img || Img} 
-            title="Contemplative Reptile"
-        />
-    </Card>
+      <Card className={classes.root}>
+          <CardMedia
+              className={classes.media}
+              image={props.img || Img} 
+              title="Contemplative Reptile"
+          />
+      </Card>
     );
 }
